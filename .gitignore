@@ -1,6 +1,14 @@
 
-
 # Environments
 venv/
+artifacts/
+logs/
+
+
+# Ignore CatBoost-generated files
+catboost_info/
+
+# Ignore Python package build files
+mlproject.egg-info/
 
 
