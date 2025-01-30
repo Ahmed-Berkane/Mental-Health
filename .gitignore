@@ -11,4 +11,7 @@ catboost_info/
 # Ignore Python package build files
 mlproject.egg-info/
 
-
+# Ignore Python cache
+__pycache__/
+*.pyc
+*.pyo

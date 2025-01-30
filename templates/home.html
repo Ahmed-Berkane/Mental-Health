@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Assessment</title> 
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; 
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 500px; /* Limit container width */
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            background-color: #4CAF50; /* Match button color */
+            color: white; /* White text for better contrast */
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold; /* Make labels bold */
+        }
+
+        input, select {
+            width: 250px; /* Limit width of all input elements */ 
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mental Health Assessment</h1> 
+        <form action="{{ url_for('predict_datapoint') }}" method="post">
+            <div>
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" min="0" max="150" required> 
+            </div>
+
+            <div>
+                <label for="work_study_hours">Work/Study Hours per Week:</label>
+                <input type="number" id="work_study_hours" name="work_study_hours" step="0.01" min="0" max="150" required> 
+            </div>
+
+            <div>
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender">
+                    <option value="Female">Female</option>
+                    <option value="Male">Male</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="prof_or_student">Professional/Student:</label>
+                <select id="prof_or_student" name="prof_or_student">
+                    <option value="Working Professional">Working Professional</option>
+                    <option value="Student">Student</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="suicidal">Suicidal Thoughts:</label>
+                <select id="suicidal" name="suicidal">
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="financial_stress">Financial Stress (1-5):</label>
+                <select id="financial_stress" name="financial_stress">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="family_hist">Family History of Mental Illness:</label>
+                <select id="family_hist" name="family_hist">
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="academic_work_pressure">Academic/Work Pressure (1-5):</label>
+                <select id="academic_work_pressure" name="academic_work_pressure">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="sleep_dur_cat">Sleep Duration Category:</label>
+                <select id="sleep_dur_cat" name="sleep_dur_cat">
+                    <option value="High Sleep">High Sleep</option>
+                    <option value="Low Sleep">Low Sleep</option>
+                    <option value="Moderate Sleep">Moderate Sleep</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="diet_cat">Diet Category:</label>
+                <select id="diet_cat" name="diet_cat">
+                    <option value="Healthy">Healthy</option>
+                    <option value="Unhealthy">Unhealthy</option>
+                    <option value="Moderate">Moderate</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        <div id="result">
+            <h2>The prediction is: {{ results }}</h2>
+        </div>
+    </div>
+</body>
+</html>
