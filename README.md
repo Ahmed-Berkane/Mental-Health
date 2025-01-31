@@ -20,7 +20,7 @@ This project focuses on predicting the presence of depression based on various p
    - Outcome: Selected Linear Regression model for its high Adjusted R-squared score of 0.92.
 
 ### 2. Data Source
-   - Dataset: [USA Mercedes Benz Prices Dataset](https://www.kaggle.com/competitions/playground-series-s4e11/data)
+   - Dataset: [Mental Health Data](https://www.kaggle.com/competitions/playground-series-s4e11/data)
    - Target: Depression
    - Features: Contains various car attributes including Age, Work/Study Hours, Gender, Professional/Student, Suicidal Thoughts, Financial Stress, Family History, Acadimic/Work Pressure, Sleep Duration, and Diet.
 
