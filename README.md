@@ -15,9 +15,9 @@ This project focuses on predicting the presence of depression based on various p
 ---
 
 ### 1. Project Overview
-   - Objective: Predict car prices based on various features.
-   - Key Features: Year of manufacture, mileage, engine size, and more.
-   - Outcome: Selected Linear Regression model for its high Adjusted R-squared score of 0.92.
+   - Objective: Predicting depression presence.
+   - Key Features: Age, Suicidal Thoughts, Work Pressure, and more.
+   - Outcome: Selected CatBoost Classifier model for its high Accuracy score of 93.67%.
 
 ### 2. Data Source
    - Dataset: [Mental Health Data](https://www.kaggle.com/competitions/playground-series-s4e11/data)
